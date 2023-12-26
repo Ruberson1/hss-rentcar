@@ -2,7 +2,7 @@
 
 ## Sistema de Gerenciamento de Locação
 
-Bem-vindo ao Sistema de Gerenciamento de Locação, uma aplicação Vue.js projetada para empresas de locação de veículos. Esta aplicação faz parte de um desafio técnico e serve como uma solução abrangente para gerenciar reservas de veículos, confirmações e funções de usuário.
+Bem-vindo ao Sistema de Gerenciamento de Locação, uma aplicação Vue.js com backend Laravel, projetada para empresas de locação de veículos. Esta aplicação faz parte de um desafio técnico e serve como uma solução abrangente para gerenciar reservas de veículos, confirmações e funções de usuário.
 
 ### Frontend
 
@@ -28,3 +28,30 @@ A aplicação possui um sistema de autenticação completo com três tipos de fu
 #### Permissões Específicas do Admin
 Os usuários administradores têm permissões adicionais, incluindo a capacidade de listar e criar veículos e usuários. Isso permite que os administradores gerenciem a frota de veículos e contas de usuário de forma eficiente.
 
+### Backend (Laravel)
+
+#### Tecnologias Utilizadas
+- **Laravel:** Um framework PHP poderoso e elegante para construir aplicativos web.
+- **Laravel Breeze:** Um pacote leve para autenticação e frontend do Laravel.
+- **Docker:** Uma plataforma para desenvolver, enviar e executar aplicativos em contêineres.
+
+#### Configuração do Ambiente
+Para executar o sistema, certifique-se de configurar seu arquivo `.env`. Se preferir, o sistema está configurado para rodar com Docker na porta 8000.
+
+### Como Rodar
+
+#### Usando Docker
+1. Certifique-se de ter o Docker instalado.
+2. Navegue até o diretório do projeto no terminal.
+3. Execute o comando: `docker-compose up -d`.
+4. Acesse o sistema em [http://localhost:8000](http://localhost:8000).
+
+#### Configuração Manual
+1. Configure o arquivo `.env` com as informações do banco de dados e outras configurações necessárias.
+2. Execute as migrações do banco de dados: `php artisan migrate`.
+3. Inicie o servidor: `php artisan serve`.
+4. Acesse o sistema em [http://localhost:8000](http://localhost:8000).
+
+**Observação:** Certifique-se de ter as dependências do Laravel instaladas. Para mais informações, consulte a documentação oficial do Laravel.
+
+Aproveite o Sistema de Gerenciamento de Locação!
