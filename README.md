@@ -28,6 +28,3 @@ A aplicação possui um sistema de autenticação completo com três tipos de fu
 #### Permissões Específicas do Admin
 Os usuários administradores têm permissões adicionais, incluindo a capacidade de listar e criar veículos e usuários. Isso permite que os administradores gerenciem a frota de veículos e contas de usuário de forma eficiente.
 
-### Backend (A ser descrito)
-
-**Observação:** O backend da aplicação ainda precisa ser descrito em detalhes. Por favor, forneça informações sobre o backend, e ficarei feliz em ajudar na criação de um README abrangente para toda a aplicação.
