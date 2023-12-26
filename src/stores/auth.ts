@@ -36,9 +36,15 @@ export const useAuthStore = defineStore({
         },
 
         async getUser() {
-            await this.getToken();
-            const data = await axios.get('/api/user');
-            this.authUser = data.data;
+            try {
+                await this.getToken();
+                const data = await axios.get('/api/user');
+                this.authUser = data.data;
+            } catch (e: any) {
+                if(e.response.status === 401) {
+                    await router.push("/login");
+                }
+            }
         },
 
         async handleForgotPass(email: any) {
@@ -86,6 +92,12 @@ export const useAuthStore = defineStore({
                 }
                 
             }
+        },
+
+        async handleLogout() {
+            await axios.post("/logout");
+            this.authUser = null;
+            await router.push("/login");
         },
 
         async handleResetPass({form}: { form: any }) {

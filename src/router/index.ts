@@ -4,7 +4,14 @@ import HomeView from "../views/HomeView.vue";
 import NotFoundView from "../views/NotFoundView.vue";
 import ForgotPassView from "../views/ForgotPassView.vue";
 import NewPassView from "../views/NewPassView.vue";
-// import NotFoundView from "../views/NotFoundView.vue";
+import CategoriesView from "../views/CategoriesView.vue";
+import CarView from "../views/CarView.vue";
+import ReservationView from "../views/ReservationView.vue";
+import UserView from "../views/UserView.vue";
+import UserEditView from "../views/UserEditView.vue";
+import CarEditView from "../views/CarEditView.vue";
+import ReservationFormView from "../views/ReservationFormView.vue";
+import ReservationEditView from "../views/ReservationEditView.vue";
 
 
 
@@ -32,13 +39,44 @@ const router = createRouter({
             component: NewPassView
         },
         {
-            path: '/404',
-            name: 'not-found',
-            component: NotFoundView
+            path: '/categories',
+            name: 'categories',
+            component: CategoriesView
         },
         {
-            path: '/:catchAll(.*)',
-            redirect: '/404',
+            path: '/cars',
+            name: 'cars',
+            component: CarView
+        },
+        {
+            path: '/cars/:carId',
+            name: 'carsEdit',
+            component: CarEditView
+        },
+        {
+            path: '/reservations',
+            name: 'reservations',
+            component: ReservationView
+        },
+        {
+            path: '/reservation/user/:userId',
+            name: 'reservationForm',
+            component:  ReservationFormView
+        },
+        {
+            path: '/reservation/:reservationId',
+            name: 'reservationEdit',
+            component:  ReservationEditView
+        },
+        {
+            path: '/users',
+            name: 'users',
+            component: UserView
+        },
+        {
+            path: '/users/:userId?',
+            name: 'usersForm',
+            component: UserEditView
         },
     ]
 })

@@ -1,26 +1,26 @@
 <script setup lang="ts">
-import HelloWorld from "../components/HelloWorld.vue";
-import {onMounted} from "vue";
-import { useAuthStore} from "../stores/auth.ts";
+import { onBeforeMount, ref } from "vue";
+import { useAuthStore } from "../stores/auth.ts";
+import HomeComponent from "../components/home/HomeComponent.vue";
+import HomeCustomerComponent from "../components/home/HomeCustomerComponent.vue";
 
 const authStore = useAuthStore();
-onMounted(async () => {
+const perm = ref();
+
+onBeforeMount(async () => {
   await authStore.getUser();
+  // @ts-ignore
+  perm.value = authStore.user.permissions[0].id;
 });
+
+
 
 </script>
 
 <template>
-<HelloWorld/>
-  <div v-if="authStore.user">
-    <h1>{{ authStore.user.name }}</h1>
-    <h1>{{ authStore.user.email }}</h1>
-  </div>
-  <div v-else>
-    <h1> Go to Login</h1>
-  </div>
+  <HomeCustomerComponent v-if="perm === 3" />
+
+  <HomeComponent v-else />
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>
