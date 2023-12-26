@@ -1,18 +1,33 @@
-# Vue 3 + TypeScript + Vite
+# README
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+## Sistema de Gerenciamento de Locação
 
-## Recommended IDE Setup
+Bem-vindo ao Sistema de Gerenciamento de Locação, uma aplicação Vue.js projetada para empresas de locação de veículos. Esta aplicação faz parte de um desafio técnico e serve como uma solução abrangente para gerenciar reservas de veículos, confirmações e funções de usuário.
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+### Frontend
 
-## Type Support For `.vue` Imports in TS
+#### Tecnologias Utilizadas
+- **Vue.js:** Um framework JavaScript progressivo para construir interfaces de usuário.
+- **Axios:** Um cliente HTTP baseado em promessas para fazer solicitações de API.
+- **Pinia:** Uma biblioteca de gerenciamento de estado para aplicações Vue.js.
+- **Bootstrap:** Um framework de front-end para construir aplicações web responsivas e modernas.
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
+#### Sistema de Autenticação
+A aplicação possui um sistema de autenticação completo com três tipos de funções de usuário: admin, comum e cliente. Cada função tem permissões e responsabilidades específicas dentro do sistema.
 
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
+- **Admin:** Usuários administradores têm permissões adicionais além dos usuários comuns, incluindo a capacidade de listar e criar veículos e usuários.
+- **Comum:** Usuários comuns têm a autoridade para confirmar reservas feitas por clientes.
+- **Cliente:** Clientes podem iniciar reservas de veículos.
 
-1. Disable the built-in TypeScript Extension
-   1. Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-   2. Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
+#### Fluxo de Reserva
+1. **Reserva do Cliente:** Um cliente inicia uma reserva para um veículo.
+2. **Confirmação por Usuário Comum/Admin:** Um usuário comum ou administrador confirma a reserva, desencadeando uma notificação por e-mail para o cliente com detalhes sobre a reserva e o veículo alugado.
+3. **Notificação por E-mail:** Um e-mail é enviado ao cliente com informações relevantes sobre a reserva e o veículo.
+4. **Desencadeamento de Evento:** Um evento é acionado para atualizar o status de confirmação para verdadeiro e enviar o e-mail de confirmação quando os funcionários confirmam a reserva.
+
+#### Permissões Específicas do Admin
+Os usuários administradores têm permissões adicionais, incluindo a capacidade de listar e criar veículos e usuários. Isso permite que os administradores gerenciem a frota de veículos e contas de usuário de forma eficiente.
+
+### Backend (A ser descrito)
+
+**Observação:** O backend da aplicação ainda precisa ser descrito em detalhes. Por favor, forneça informações sobre o backend, e ficarei feliz em ajudar na criação de um README abrangente para toda a aplicação.
